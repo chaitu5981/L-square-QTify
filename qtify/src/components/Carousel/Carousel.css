@@ -13,15 +13,15 @@
   font-size: smaller;
 }
 
-.hide2 .swiper-button-next {
-  display: none;
-}
 .show2 .swiper-button-next {
   display: flex;
 }
-.hide1 .swiper-button-prev {
+.hide2 .swiper-button-next {
   display: none;
 }
 .show1 .swiper-button-prev {
   display: flex;
+}
+.hide1 .swiper-button-prev {
+  display: none;
 }

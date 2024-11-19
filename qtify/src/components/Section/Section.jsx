@@ -11,11 +11,11 @@ import {
 import Album from "../Album/Album";
 import Carousel from "../Carousel/Carousel";
 const Section = ({ albums, type }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   return (
     <Box sx={{ padding: "20px" }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography>{`${type == "top" ? "Top" : "New"} Albums`}</Typography>
+        <Typography>{`${type === "top" ? "Top" : "New"} Albums`}</Typography>
         <Button
           sx={{ color: "#34c94b", textTransform: "none" }}
           onClick={() => setCollapsed(!collapsed)}

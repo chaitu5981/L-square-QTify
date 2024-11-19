@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import React, { useState } from "react";
 import Album from "../Album/Album";
@@ -14,10 +13,13 @@ const Carousel = ({ items }) => {
       spaceBetween={10}
       dir="ltr"
       navigation={true}
-      onReachEnd={() => setShowEndBtn(false)}
-      onReachBeginning={() => setShowStartBtn(false)}
-      onNavigationPrev={() => setShowEndBtn(true)}
-      onNavigationNext={() => setShowStartBtn(true)}
+      onReachEnd={(e) => setShowEndBtn(false)}
+      onInit={() => setShowEndBtn(true)}
+      onReachBeginning={(e) => setShowStartBtn(false)}
+      onSlideChange={() => {
+        showEndBtn || setShowEndBtn(true);
+        showStartBtn || setShowStartBtn(true);
+      }}
       breakpoints={{
         600: {
           slidesPerView: 3,
