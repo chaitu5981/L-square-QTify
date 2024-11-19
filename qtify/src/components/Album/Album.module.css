@@ -1,0 +1,6 @@
+@import "../../global.css";
+
+.chip {
+  background-color: var(--color-black) !important;
+  color: var(--color-white) !important;
+}

@@ -1,0 +1,6 @@
+@import "../global.css";
+.line {
+  width: 100vw;
+  height: 1px;
+  background-color: var(--color-primary);
+}
