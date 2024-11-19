@@ -12,9 +12,6 @@ const Carousel = ({ items }) => {
       spaceBetween={10}
       dir="rtl"
       navigation={true}
-      pagination={{
-        clickable: true,
-      }}
       breakpoints={{
         600: {
           slidesPerView: 3,
@@ -30,7 +27,7 @@ const Carousel = ({ items }) => {
           spaceBetween: 50,
         },
       }}
-      modules={[Navigation, Pagination]}
+      modules={[Navigation]}
       className="mySwiper"
     >
       {items.map(({ id, image, follows, title }) => (
