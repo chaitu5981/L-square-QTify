@@ -1,0 +1,5 @@
+@import "../../global.css";
+.btn {
+  background-color: var(--color-black) !important;
+  color: var(--color-primary) !important;
+}
