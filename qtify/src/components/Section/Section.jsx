@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -7,22 +7,33 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+
 import Album from "../Album/Album";
+import Carousel from "../Carousel/Carousel";
 const Section = ({ albums, type }) => {
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <Box sx={{ padding: "20px" }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography>{`${type == "top" ? "Top" : "New"} Albums`}</Typography>
-        <Button sx={{ color: "#34c94b" }}>Collapse</Button>
+        <Button
+          sx={{ color: "#34c94b" }}
+          onClick={() => setCollapsed(!collapsed)}
+        >
+          {collapsed ? "Show All" : "Collapse"}
+        </Button>
       </Stack>
-
-      <Grid2 container spacing={4} sx={{ margin: "10px 0" }}>
-        {albums.map(({ id, image, follows, title }) => (
-          <Grid2 size={1.7} key={id}>
-            <Album image={image} follows={follows} title={title} />
-          </Grid2>
-        ))}
-      </Grid2>
+      {collapsed ? (
+        <Carousel items={albums} />
+      ) : (
+        <Grid2 container spacing={4} sx={{ margin: "10px 0" }}>
+          {albums.map(({ id, image, follows, title }) => (
+            <Grid2 size={1.7} key={id}>
+              <Album image={image} follows={follows} title={title} />
+            </Grid2>
+          ))}
+        </Grid2>
+      )}
     </Box>
   );
 };

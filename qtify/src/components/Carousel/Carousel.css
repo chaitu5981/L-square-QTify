@@ -1,0 +1,14 @@
+@import "../../global.css";
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: smaller;
+}

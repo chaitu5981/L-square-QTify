@@ -22,7 +22,7 @@ const Album = ({ image, follows, title }) => {
           <Chip label={`${follows} follows`} className={styles.chip} />
         </CardActions>
       </Card>
-      <Typography>{title}</Typography>
+      <Typography sx={{ textAlign: "start" }}>{title}</Typography>
     </Box>
   );
 };
