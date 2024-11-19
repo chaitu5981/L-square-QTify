@@ -1,17 +1,23 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import React from "react";
+import { Navigation } from "swiper/modules";
+import React, { useState } from "react";
 import Album from "../Album/Album";
 import "swiper/css/navigation";
 import "./Carousel.css";
 const Carousel = ({ items }) => {
+  const [showEndBtn, setShowEndBtn] = useState(true);
+  const [showStartBtn, setShowStartBtn] = useState(false);
   return (
     <Swiper
       spaceBetween={10}
-      dir="rtl"
+      dir="ltr"
       navigation={true}
+      onReachEnd={() => setShowEndBtn(false)}
+      onReachBeginning={() => setShowStartBtn(false)}
+      onNavigationPrev={() => setShowEndBtn(true)}
+      onNavigationNext={() => setShowStartBtn(true)}
       breakpoints={{
         600: {
           slidesPerView: 3,
@@ -28,7 +34,9 @@ const Carousel = ({ items }) => {
         },
       }}
       modules={[Navigation]}
-      className="mySwiper"
+      className={`${showStartBtn ? "show1" : "hide1"} ${
+        showEndBtn ? "show2" : "hide2"
+      }`}
     >
       {items.map(({ id, image, follows, title }) => (
         <SwiperSlide key={id}>

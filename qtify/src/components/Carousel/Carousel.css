@@ -12,3 +12,16 @@
 .swiper-button-prev::after {
   font-size: smaller;
 }
+
+.hide2 .swiper-button-next {
+  display: none;
+}
+.show2 .swiper-button-next {
+  display: flex;
+}
+.hide1 .swiper-button-prev {
+  display: none;
+}
+.show1 .swiper-button-prev {
+  display: flex;
+}
