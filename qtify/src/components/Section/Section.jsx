@@ -28,7 +28,7 @@ const Section = ({ albums, type }) => {
       ) : (
         <Grid2 container spacing={4} sx={{ margin: "10px 0" }}>
           {albums.map(({ id, image, follows, title }) => (
-            <Grid2 size={1.7} key={id}>
+            <Grid2 size={{ sm: 4, md: 2.4, lg: 1.7 }} key={id}>
               <Album image={image} follows={follows} title={title} />
             </Grid2>
           ))}
