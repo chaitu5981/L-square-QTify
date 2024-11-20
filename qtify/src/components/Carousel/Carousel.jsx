@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Album from "../Album/Album";
 import "swiper/css/navigation";
 import "./Carousel.css";
-const Carousel = ({ items }) => {
+const Carousel = ({ items, type }) => {
   const [showEndBtn, setShowEndBtn] = useState(true);
   const [showStartBtn, setShowStartBtn] = useState(false);
   return (
@@ -40,9 +40,14 @@ const Carousel = ({ items }) => {
         showEndBtn ? "show2" : "hide2"
       }`}
     >
-      {items.map(({ id, image, follows, title }) => (
+      {items.map(({ id, image, follows, likes, title }) => (
         <SwiperSlide key={id}>
-          <Album image={image} follows={follows} title={title} />
+          <Album
+            image={image}
+            follows={type === "songs" ? likes : follows}
+            title={title}
+            type={type}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -13,6 +13,10 @@ const theme = createTheme({
   typography: {
     fontFamily: "Poppins, Arial, sans-serif", // Apply your desired font family
   },
+  palette: {
+    primary: { main: "#34c94b" },
+    secondary: { main: "#ffffff" },
+  },
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

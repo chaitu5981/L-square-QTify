@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import styles from "./Album.module.css";
-const Album = ({ image, follows, title }) => {
+const Album = ({ image, follows, title, type }) => {
   return (
     <Box>
       <Card sx={{ borderRadius: "10px" }}>
@@ -19,7 +19,10 @@ const Album = ({ image, follows, title }) => {
           component="img"
         />
         <CardActions>
-          <Chip label={`${follows} follows`} className={styles.chip} />
+          <Chip
+            label={`${follows} ${type === "songs" ? "Likes" : "Follows"}`}
+            className={styles.chip}
+          />
         </CardActions>
       </Card>
       <Typography sx={{ textAlign: "start" }}>{title}</Typography>
